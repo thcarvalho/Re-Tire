@@ -1,0 +1,65 @@
+import React from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import Map from '../screens/Map';
+import DestinationsList from '../screens/DestinationsList';
+import SuggestionsMap from '../screens/Suggestions/SuggestionMap';
+import CustomDrawer from '../components/CustomDrawer';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import IconMA from 'react-native-vector-icons/MaterialIcons';
+import colors from '../styles/colors';
+
+const Drawer = createDrawerNavigator();
+
+const DrawerNavigator: React.FC = () => {
+  return (
+    <Drawer.Navigator
+      drawerContent={(props) => (
+        <CustomDrawer
+          itemStyle={{
+            marginHorizontal: 0,
+            paddingLeft: 20,
+            height: 59,
+            justifyContent: 'center',
+          }}
+          labelStyle={{ fontWeight: 'bold', marginLeft: -20, fontSize: 16 }}
+          activeBackgroundColor={colors.third_grey}
+          activeTintColor={colors.main_green}
+          inactiveTintColor={colors.third_green}
+          {...props}
+        />
+      )}>
+      <Drawer.Screen
+        name="Home"
+        options={{
+          drawerLabel: 'Início',
+          drawerIcon: ({ color }) => (
+            <Icon name="home" size={24} color={color} />
+          ),
+        }}
+        component={Map}
+      />
+      <Drawer.Screen
+        name="List"
+        options={{
+          drawerLabel: 'Lista',
+          drawerIcon: ({ color }) => (
+            <IconMA name="list-alt" size={24} color={color} />
+          ),
+        }}
+        component={DestinationsList}
+      />
+      <Drawer.Screen
+        name="Suggestions"
+        options={{
+          drawerLabel: 'Sugerir',
+          drawerIcon: ({ color }) => (
+            <Icon name="message-plus" size={24} color={color} />
+          ),
+        }}
+        component={SuggestionsMap}
+      />
+    </Drawer.Navigator>
+  );
+};
+
+export default DrawerNavigator;
