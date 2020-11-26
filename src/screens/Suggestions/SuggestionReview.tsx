@@ -21,8 +21,11 @@ import {
 } from '../../styles/screens/suggestions';
 
 import ecoImg from '../../assets/images/ECOPONTO.jpg';
+import { useNavigation } from '@react-navigation/native';
 
 const SuggestionReview: React.FC = () => {
+  const { navigate, goBack } = useNavigation();
+
   return (
     <>
       <ReviewScroll>
@@ -81,17 +84,17 @@ const SuggestionReview: React.FC = () => {
             </ReviewImageBlock>
           </ReviewBlock>
 
-          <ReviewFinish>
+          <ReviewFinish onPress={() => navigate('Map')}>
             <ReviewFinishText>Tudo Ok!</ReviewFinishText>
           </ReviewFinish>
         </Container>
       </ReviewScroll>
       <Header>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={goBack}>
           <Icon name="chevron-back" size={26} color="#FFF" />
         </TouchableOpacity>
         <HeaderText>Tudo certo?</HeaderText>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate('Map')}>
           <Icon name="close-outline" size={26} color="#FFF" />
         </TouchableOpacity>
       </Header>

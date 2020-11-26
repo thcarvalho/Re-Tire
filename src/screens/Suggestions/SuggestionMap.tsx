@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Dimensions, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -11,6 +12,7 @@ import {
 } from '../../styles/screens/suggestions';
 
 const SuggestionsMap: React.FC = () => {
+  const { navigate, goBack } = useNavigation();
   return (
     <Container>
       <MapboxGL.MapView
@@ -31,17 +33,17 @@ const SuggestionsMap: React.FC = () => {
           placeholderTextColor={colors.main_grey}
           placeholder="Pequise ou toque no mapa..."
         />
-        <ConfirmFab>
+        <ConfirmFab onPress={() => navigate('SuggestionName')}>
           <Icon name="checkmark-sharp" size={40} color="#fff" />
         </ConfirmFab>
       </MapInputBlock>
 
       <Header>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={goBack}>
           <Icon name="chevron-back" size={26} color="#FFF" />
         </TouchableOpacity>
         <HeaderText>Qual o local?</HeaderText>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate('Map')}>
           <Icon name="close-outline" size={26} color="#FFF" />
         </TouchableOpacity>
       </Header>

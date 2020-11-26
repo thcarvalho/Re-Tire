@@ -9,8 +9,11 @@ import {
   InputBlock,
   StyledInput,
 } from '../../styles/screens/suggestions';
+import { useNavigation } from '@react-navigation/native';
 
 const SuggestionsName: React.FC = () => {
+  const { goBack, navigate } = useNavigation();
+
   return (
     <Container>
       <InputBlock>
@@ -20,15 +23,15 @@ const SuggestionsName: React.FC = () => {
           placeholder="Digite o nome do ecoponto..."
         />
       </InputBlock>
-      <AbsoluteConfirmFab>
+      <AbsoluteConfirmFab onPress={() => navigate('SuggestionContact')}>
         <Icon name="checkmark-sharp" size={40} color="#fff" />
       </AbsoluteConfirmFab>
       <Header>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={goBack}>
           <Icon name="chevron-back" size={26} color="#FFF" />
         </TouchableOpacity>
         <HeaderText>Qual o nome?</HeaderText>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate('Map')}>
           <Icon name="close-outline" size={26} color="#FFF" />
         </TouchableOpacity>
       </Header>

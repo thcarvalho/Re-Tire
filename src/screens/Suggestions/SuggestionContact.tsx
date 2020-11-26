@@ -9,8 +9,11 @@ import {
   AbsoluteConfirmFab,
 } from '../../styles/screens/suggestions';
 import colors from '../../styles/colors';
+import { useNavigation } from '@react-navigation/native';
 
 const SuggestionsContact: React.FC = () => {
+  const { goBack, navigate } = useNavigation();
+
   return (
     <Container>
       <InputBlock>
@@ -38,16 +41,16 @@ const SuggestionsContact: React.FC = () => {
         />
       </InputBlock>
 
-      <AbsoluteConfirmFab>
+      <AbsoluteConfirmFab onPress={() => navigate('SuggestionImage')}>
         <Icon name="checkmark-sharp" size={40} color="#fff" />
       </AbsoluteConfirmFab>
 
       <Header>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={goBack}>
           <Icon name="chevron-back" size={26} color="#FFF" />
         </TouchableOpacity>
         <HeaderText>Quais os meios de contato?</HeaderText>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate('Map')}>
           <Icon name="close-outline" size={26} color="#FFF" />
         </TouchableOpacity>
       </Header>
