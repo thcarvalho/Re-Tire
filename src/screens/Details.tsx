@@ -23,8 +23,11 @@ import {
   DetailsImageBlock,
 } from '../styles/screens/details';
 import ecoImg from '../assets/images/ECOPONTO.jpg';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Details: React.FC = () => {
+  const { navigate, goBack } = useNavigation();
   return (
     <>
       <DetailsScroll>
@@ -55,7 +58,7 @@ const Details: React.FC = () => {
               <DetailsText>CEP: 0129310-93</DetailsText>
             </DetailsLocation>
 
-            <DetailsMapButton>
+            <DetailsMapButton onPress={() => navigate('Map')}>
               <Icon name="location-sharp" size={22} color="#fff" />
               <DetailsButtonText>Ver no Maps</DetailsButtonText>
             </DetailsMapButton>
@@ -97,7 +100,9 @@ const Details: React.FC = () => {
         </Container>
       </DetailsScroll>
       <Header>
-        <Icon name="chevron-back" size={26} color="#fff" />
+        <TouchableOpacity onPress={goBack}>
+          <Icon name="chevron-back" size={26} color="#fff" />
+        </TouchableOpacity>
         <HeaderText style={{ marginRight: 13 }}>Ecoponto açsdka</HeaderText>
         <View />
       </Header>

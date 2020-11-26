@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -10,8 +11,11 @@ import {
 } from '../styles/components/destination-box';
 
 const DestinationBox: React.FC = () => {
+  const { navigate } = useNavigation();
   return (
-    <DestinationContainer activeOpacity={0.5}>
+    <DestinationContainer
+      onPress={() => navigate('Details')}
+      activeOpacity={0.5}>
       <View>
         <DestinationTitle>Ecoponto blablabla</DestinationTitle>
         <DestinationAddress>Rua lkajsdlkajs</DestinationAddress>
