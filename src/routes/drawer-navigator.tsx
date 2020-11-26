@@ -1,12 +1,12 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Map from '../screens/Map';
-import DestinationsList from '../screens/DestinationsList';
-import SuggestionsMap from '../screens/Suggestions/SuggestionMap';
 import CustomDrawer from '../components/CustomDrawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconMA from 'react-native-vector-icons/MaterialIcons';
 import colors from '../styles/colors';
+import ListNavigator from './list-navigator';
+import SuggestionsNavigator from './suggestions-navigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -46,7 +46,7 @@ const DrawerNavigator: React.FC = () => {
             <IconMA name="list-alt" size={24} color={color} />
           ),
         }}
-        component={DestinationsList}
+        component={ListNavigator}
       />
       <Drawer.Screen
         name="Suggestions"
@@ -56,7 +56,7 @@ const DrawerNavigator: React.FC = () => {
             <Icon name="message-plus" size={24} color={color} />
           ),
         }}
-        component={SuggestionsMap}
+        component={SuggestionsNavigator}
       />
     </Drawer.Navigator>
   );
