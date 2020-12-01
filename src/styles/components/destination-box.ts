@@ -2,9 +2,9 @@ import styled from 'styled-components/native';
 import colors from '../colors';
 
 export const DestinationContainer = styled.TouchableOpacity`
-  width: 100%;
-  height: 104px;
-  padding: 0 12px;
+  max-width: 100%;
+  min-height: 104px;
+  padding: 12px 12px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +21,7 @@ export const DestinationTitle = styled.Text`
 
 export const DestinationAddress = styled.Text`
   color: ${colors.bold_grey};
+  width: 310px;
 `;
 
 export const DestinationPhone = styled.Text`
