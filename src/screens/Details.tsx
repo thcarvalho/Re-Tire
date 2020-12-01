@@ -23,10 +23,15 @@ import {
   DetailsImageBlock,
 } from '../styles/screens/details';
 import ecoImg from '../assets/images/ECOPONTO.jpg';
-import { useNavigation } from '@react-navigation/native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { ListNavigatorParams } from '../routes/list-navigator';
 
 const Details: React.FC = () => {
+  const {
+    params: { destination },
+  } = useRoute<RouteProp<ListNavigatorParams, 'Details'>>();
+
   const { navigate, goBack } = useNavigation();
   return (
     <>
@@ -48,14 +53,14 @@ const Details: React.FC = () => {
               zoomEnabled={false}
               styleURL={MapboxGL.StyleURL.Light}>
               <MapboxGL.Camera
-                centerCoordinate={[-46.4961449, -23.4877088]}
+                centerCoordinate={[destination.longitude, destination.latitude]}
                 zoomLevel={15}
               />
             </DetailsMap>
 
             <DetailsLocation>
-              <DetailsText>Rua alksjdlkasjd</DetailsText>
-              <DetailsText>CEP: 0129310-93</DetailsText>
+              <DetailsText>{destination.address}</DetailsText>
+              <DetailsText>CEP: {destination.cep}</DetailsText>
             </DetailsLocation>
 
             <DetailsMapButton onPress={() => navigate('Map')}>
@@ -71,9 +76,9 @@ const Details: React.FC = () => {
             </AlignBlock>
 
             <DetailsContact>
-              <DetailsText>11 123123123</DetailsText>
-              <DetailsText>E-mail: asdkjaçlksjdklj@asçdlkas.com</DetailsText>
-              <DetailsText>Seg a Sex: 9h às 18h</DetailsText>
+              <DetailsText>{destination.phone}</DetailsText>
+              <DetailsText>E-mail: {destination.email}</DetailsText>
+              <DetailsText>Seg à Sex: {destination.opening_hours}</DetailsText>
             </DetailsContact>
 
             <DetailsWhatsappButton>
@@ -89,13 +94,12 @@ const Details: React.FC = () => {
             </AlignBlock>
 
             <DetailsImageText>2 fotos encontradas</DetailsImageText>
-
-            <DetailsImage source={ecoImg} />
-            <DetailsImageBlock>
+            <DetailsImage source={{ uri: destination.images[0].url }} />
+            {/* <DetailsImageBlock>
               <DetailsImageMini source={ecoImg} />
               <DetailsImageMini source={ecoImg} />
               <DetailsImageMini source={ecoImg} />
-            </DetailsImageBlock>
+            </DetailsImageBlock> */}
           </DetailsBlock>
         </Container>
       </DetailsScroll>
@@ -103,7 +107,7 @@ const Details: React.FC = () => {
         <TouchableOpacity onPress={goBack}>
           <Icon name="chevron-back" size={26} color="#fff" />
         </TouchableOpacity>
-        <HeaderText style={{ marginRight: 13 }}>Ecoponto açsdka</HeaderText>
+        <HeaderText style={{ marginRight: 13 }}>{destination.name}</HeaderText>
         <View />
       </Header>
     </>
