@@ -1,10 +1,15 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
+import IDestination from '../models/Destination';
 import DestinationsList from '../screens/DestinationsList';
 import Details from '../screens/Details';
 import DrawerNavigator from './drawer-navigator';
 
 const Stack = createStackNavigator();
+
+export type ListNavigatorParams = {
+  Details: { destination: IDestination };
+};
 
 const ListNavigator: React.FC = () => {
   return (
