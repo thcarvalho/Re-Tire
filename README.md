@@ -31,6 +31,7 @@ Seu objetivo inicial é indicar para os usuários onde ficam os eco-pontos mais 
   <img alt="list" src="./github/screenshots/list.png" width="200px">
   <img alt="details" src="./github/screenshots/details.png" width="200px">
 </p>
+
 Acesse o layout completo no [Figma](https://www.figma.com/file/Ki4aM1OaqvQ5oJpsgcDpL5/Re-Tire-Mobile?node-id=0%3A1) (Ainda em construção).
 
 ## Features
