@@ -70,7 +70,6 @@ $ cd Re-tire
 $ npm install
 ou
 $ yarn
-
 ```
 
 Após isso, crie um arquivo [.env](https://www.npmjs.com/package/dotenv) na raiz do projeto com as seguintes variáveis:
