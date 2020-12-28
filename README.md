@@ -25,12 +25,12 @@ O Re-tire foi inicialmente feito como um projeto para o meu TCC, e atualmente es
 Seu objetivo inicial é indicar para os usuários onde ficam os eco-pontos mais próximos de seus locais, afim de auxiliar no descarte correto de seus pneus, dessa forma contribuindo com o meio ambiente tendo em vista o atual cenário global onde vemos cada vez mais os prejuizos ao meio ambiente.
 
 ## Screenshots
-
-<img alt="map" src="./github/screenshots/map.png" width="200px">
-<img alt="drawer" src="./github/screenshots/drawer.png" width="200px">
-<img alt="list" src="./github/screenshots/list.png" width="200px">
-<img alt="details" src="./github/screenshots/details.png" width="200px">
-
+<p align="center">
+  <img alt="map" src="./github/screenshots/map.png" width="200px">
+  <img alt="drawer" src="./github/screenshots/drawer.png" width="200px">
+  <img alt="list" src="./github/screenshots/list.png" width="200px">
+  <img alt="details" src="./github/screenshots/details.png" width="200px">
+</p>
 Acesse o layout completo no [Figma](https://www.figma.com/file/Ki4aM1OaqvQ5oJpsgcDpL5/Re-Tire-Mobile?node-id=0%3A1) (Ainda em construção).
 
 ## Features
