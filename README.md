@@ -39,7 +39,7 @@ Acesse o layout completo no [Figma](https://www.figma.com/file/Ki4aM1OaqvQ5oJpsg
 - [x] Acessar mapa
 - [x] Listar eco-pontos
 - [x] Visualizar detalhes de cada eco-ponto
-- [ ] Pesquisar um eco-ponto específico
+- [x] Pesquisar um eco-ponto específico
 - [ ] Sugerir um novo eco-ponto
 
 ### Versão Web
