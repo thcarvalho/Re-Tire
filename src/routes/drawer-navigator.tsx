@@ -1,12 +1,12 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Map from '../screens/Map';
 import CustomDrawer from '../components/CustomDrawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconMA from 'react-native-vector-icons/MaterialIcons';
 import colors from '../styles/colors';
 import ListNavigator from './list-navigator';
 import SuggestionsNavigator from './suggestions-navigator';
+import StackNavigator from './stack-navigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -36,7 +36,7 @@ const DrawerNavigator: React.FC = () => {
             <Icon name="home" size={24} color={color} />
           ),
         }}
-        component={Map}
+        component={StackNavigator}
       />
       <Drawer.Screen
         name="List"
