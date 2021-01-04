@@ -19,13 +19,11 @@ import {
   DetailsWhatsappButton,
   DetailsImage,
   DetailsImageText,
-  DetailsImageMini,
-  DetailsImageBlock,
 } from '../styles/screens/details';
-import ecoImg from '../assets/images/ECOPONTO.jpg';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ListNavigatorParams } from '../routes/list-navigator';
+import { Marker } from '../styles/screens/map';
 
 const Details: React.FC = () => {
   const {
@@ -56,6 +54,13 @@ const Details: React.FC = () => {
                 centerCoordinate={[destination.longitude, destination.latitude]}
                 zoomLevel={15}
               />
+              <MapboxGL.PointAnnotation
+                key={destination.id}
+                id={String(destination.id)}
+                draggable={false}
+                coordinate={[destination.longitude, destination.latitude]}>
+                <Marker />
+              </MapboxGL.PointAnnotation>
             </DetailsMap>
 
             <DetailsLocation>
