@@ -21,7 +21,7 @@ const DestinationsList: React.FC = () => {
     <>
       <DestinationScroll>
         {destinations.map((destination) => (
-          <DestinationBox data={destination} />
+          <DestinationBox key={destination.id} data={destination} />
         ))}
       </DestinationScroll>
       <Header>
